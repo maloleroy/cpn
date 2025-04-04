@@ -1,0 +1,45 @@
+\documentclass[en]{article}
+
+\usepackage{amsfonts}
+
+\title{CPn: C polynomials}
+\author{M. Leroy}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+
+The purpose of this program is to perform operations and calculations on polynomials. This includes adding, substracting, multiplying or dividing (as in Euclidean division), or finding a greatest common divisor. \\
+
+\textit{In this paragraph, T refers to a mathematical set, like $\mathbb{Q}$ or $\mathbb{Z}[X]$.} \\
+
+If an object uses dynamic memory allocation, it is created by a \texttt{make\_T} function. In this case, we should call \texttt{free\_T} on this object before ending the program. If at the opposite an object does not use memory allocation, but stil needs to be created by a function, this function should be named \texttt{new\_T}. We do not need to free the memory used by objects created by such a function.
+
+\section{Typing}
+
+All polynomials must (mathematically) have their coefficients in $\mathbb{Q}$, since we do not introduce irrational coefficients (at least for now). The typing respects the usual operations in sub-rings ($(\mathbb{Z}[X], +, \cdot)$ and $(\mathbb{Q}[X], +, \cdot)$):
+\begin{itemize}
+    \item $\forall (P, Q) \in \mathbb{Z}[X]^2, P + Q \in \mathbb{Z}[X]$
+    \item $\forall (P, Q) \in \mathbb{Z}[X]^2, PQ \in \mathbb{Z}[X]$
+    \item $\forall (P, Q) \in \mathbb{Q}[X]^2, P + Q \in \mathbb{Q}[X]$
+    \item $\forall (P, Q) \in \mathbb{Q}[X]^2, PQ \in \mathbb{Q}[X]$
+\end{itemize}
+Besides that, there is an automatic upward type conversion:
+\begin{itemize}
+    \item $\forall (P, Q) \in \mathbb{Z}[X] \times \mathbb{Q}[X], P + Q \in \mathbb{Q}[X]$
+    \item $\forall (P, Q) \in \mathbb{Z}[X] \times \mathbb{Q}[X], PQ \in \mathbb{Q}[X]$
+\end{itemize}
+
+\subsection{Fast polynomials}
+
+\begin{itemize}
+    \item With integer coefficients ($\mathbb{Z}[X]$)
+    \item With rational coefficients ($\mathbb{Q}[X]$)
+\end{itemize}
+
+\subsection{Named polynomials}
+
+
+\end{document}
