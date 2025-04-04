@@ -1,0 +1,10 @@
+obj/
+bin/
+*.pdf
+*.fls
+*.log
+*.aux
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.bcf
